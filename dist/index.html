@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Ядро чата</title>
+   <!-- dev -->
+   <!-- <script id="chatix_init" src="chatix_widget_bundle.js" data-websiteid="5484282a-77f5-4b51-93c2-4dcc7326b10a"></script> -->
+   <!-- beta -->
+   <!-- <script id="chatix_init" src="chatix_widget_bundle.js" data-websiteid="d4913f83-e3a8-484d-be1b-c64ffe248592"></script> -->
+   <!-- app1 -->
+   <script id="chatix_init" src="chatix_widget_bundle.js" data-websiteid="69b4fec7-d1b5-45dd-9508-f8e49fa1ab75"></script>
+
+   <script>
+      chatixWidget.onConnect = function(){
+			// console.log('Виджет подключен');
+         // chatixWidget.setVisitor({
+         //    name: 'Рыжий-из-иванушек-интернешнл',
+         //    fields: {
+         //       test: 'test',
+         //       sdf: ';lkj',
+         //       'ИД сервиса': 654
+         //    }
+         // });
+      }
+		chatixWidget.onNewMessageReceived = function(messages) {
+			// console.log(messages);
+		}
+      chatixWidget.onNewMessageSent = function(message){
+         // console.log(message);
+      }
+      chatixWidget.onManagerConnected = function(manager){
+         // console.log(manager);
+      }
+      chatixWidget.onManagerDisconnected = function(manager){
+         // console.log(manager);
+      }
+      chatixWidget.onVisitorOpenedWindow = function(){
+         // console.log('Открыли виджет');
+      }
+      chatixWidget.onVisitorClosedWindow = function(){
+         // console.log('Закрыли виджет');
+      }
+   </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "chatix_widget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@aspnet/signalr": "^1.0.0-rc1-update1",
+    "chatix-core": "^0.1.17"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3",
+    "docdash": "^0.4.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config dev.webpack.config.js",
+    "watch": "webpack --watch",
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

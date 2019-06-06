@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+   <meta charset="UTF-8">
+   <title>Chatix core v0.1</title>
+   <!-- <link rel="stylesheet/less" type="text/css" href="less/style.less" />
+   <script src="js/less.min.js" type="text/javascript"></script> -->
+   <script src="dist/chatix_core.js"></script>
+</head>
+<body>
+   Chatix core v0.1
+
+   <form method="post" action="http://dev.chatix.io:5001/v0/file/save?visitorId=4a7911ca-52be-4a24-bed0-72c17cb265ca&websiteId=fakeId" enctype="multipart/form-data">
+      <p>== Загрузить файл ==</p>
+         <input type="file" id="formFile" name="formFile" multiple/>
+      <br/>
+      <br/>
+      <input type="submit" value="Отправить файл" />
+   </form>
+</body>
+</html>
