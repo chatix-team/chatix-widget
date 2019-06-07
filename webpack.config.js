@@ -25,6 +25,14 @@ module.exports = {
 						presets: ['env', 'stage-0'],
 					}
 				}
+			},
+			{
+				test: /\.css$/i,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(png|jpg)$/,
+				loader: 'url-loader'
 			}
 		]
 	}

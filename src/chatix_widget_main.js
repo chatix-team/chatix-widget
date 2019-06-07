@@ -1,29 +1,18 @@
-import ChatixCore from 'chatix-core';
+// import ChatixCore from 'chatix-core';
+import './css/style.css';
+import chatix_template from './chatix_widget_template.js';
+import upload_icon from './img/upload_icon.png';
+import message_no_image from './img/message_no_image.png';
+import default_avatar from './img/default_avatar.png';
 
 let chatixInit = document.getElementById("chatix_init");
 let websiteId = chatixInit.getAttribute("data-websiteid");
 let visitorId = chatixInit.getAttribute("data-visitorid");
 
-let chatixPath = chatixInit.getAttribute("src");
-let arrchatixPath = chatixPath.split('/');
-let fileName = arrchatixPath[arrchatixPath.length-1];
-chatixPath = chatixPath.substr(0, chatixPath.length - fileName.length);
-
 // полключаем ядро
-// let scriptCore = document.createElement('script');
-// scriptCore.src = 'http://localhost:8080/chatix_core.js';
-// document.getElementsByTagName('head')[0].appendChild(scriptCore);
-
-// подключаем шаблон
-let scriptTemplate = document.createElement('script');
-scriptTemplate.src = chatixPath + 'chatix_widget_template.js';
-document.getElementsByTagName('head')[0].appendChild(scriptTemplate);
-
-// подключаем css
-let css = document.createElement('link');
-css.href = chatixPath + 'style.css';
-css.rel = 'stylesheet';
-document.getElementsByTagName('head')[0].appendChild(css);
+let scriptCore = document.createElement('script');
+scriptCore.src = 'http://localhost:8080/chatix_core.js';
+document.getElementsByTagName('head')[0].appendChild(scriptCore);
 
 // Нужна что бы не показывать сообщение о нерабочем времени, если менеджер все таки онлайн
 let managerOnline = false;
@@ -555,8 +544,8 @@ window.onload = function() {
 					popupImg.setAttribute('src', message.original_url ? message.original_url : message.content);
             };
             img.onerror = function(){
-					uploads_files.setAttribute('src', 'https://223421.selcdn.ru/chatix-dev/assets/img/message_no_image.png');
-					popupImg.setAttribute('src', 'https://223421.selcdn.ru/chatix-dev/assets/img/message_no_image.png');
+					uploads_files.setAttribute('src', message_no_image);
+					popupImg.setAttribute('src', message_no_image);
             };
 
 			  uploads_files.classList.add('message__uploadImg');
@@ -582,7 +571,7 @@ window.onload = function() {
 			// сообщение с файлом (старое и новое)
 			else if (message.type === 2 || message.type === 5) {
 				let fileUrl = message.file_url ? message.file_url : message.content;
-			  let uploads_files = "<a class='chatBody__fileLink' target='_blank' href='" + fileUrl + "'><img class='chatBody__fileIcon' src='" + chatixPath + "img/upload_icon.png' /> Скачать файл</a>";
+			  let uploads_files = "<a class='chatBody__fileLink' target='_blank' href='" + fileUrl + "'><img class='chatBody__fileIcon' src='" + upload_icon + "' /> Скачать файл</a>";
 			  let file_in_message = document.createElement('div');
 			  file_in_message.innerHTML = uploads_files;
 
@@ -730,7 +719,7 @@ window.onload = function() {
 			manager_ava.innerHTML = "<div class='chatHead__avatar-wrap'><img src='" + manager.avatar_thumb300_url + "' /></div>"
 		}
 		else {
-			manager_ava.innerHTML = "<div class='chatHead__avatar-wrap'><img src='" + chatixPath + "img/default_avatar.png'></div>"
+			manager_ava.innerHTML = "<div class='chatHead__avatar-wrap'><img src='" + default_avatar + "'></div>"
 		}
 
 		if (manager.is_online) {
@@ -1113,7 +1102,7 @@ window.onload = function() {
 			let new_message = document.createElement('div');
 			new_message.classList.add('chatBody__message');
 			new_message.classList.add('chatBody__outMessage');
-			new_message.innerHTML = '<div class="chatBody__spin"></div> <div><a class="chatBody__fileLink" target="_blank" href="#"><img class="chatBody__fileIcon" src="img/upload_icon.png"> Скачать файл</a></div>';
+			new_message.innerHTML = '<div class="chatBody__spin"></div> <div><a class="chatBody__fileLink" target="_blank" href="#"><img class="chatBody__fileIcon" src="' + upload_icon + '"> Скачать файл</a></div>';
 
 			// добавляем сообщение в список сообщений
 			document.getElementById('messages_list').appendChild(new_message);

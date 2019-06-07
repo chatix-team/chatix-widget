@@ -12,9 +12,12 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^2.1.1",
+    "docdash": "^0.4.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.0",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3",
-    "docdash": "^0.4.0"
+    "webpack-dev-server": "^2.9.3"
   },
   "scripts": {
     "start": "webpack-dev-server --config dev.webpack.config.js",
